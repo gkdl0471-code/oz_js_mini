@@ -1,0 +1,295 @@
+/* 모든 요소의 기본 여백 제거 */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* HTML과 Body의 기본 설정 */
+html, body {
+  background-color: #383126;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iphon {
+  border: 7px solid #000000;
+  box-shadow:0 100px 200px rgba(217, 204, 204, 0.9);
+  border-radius: 40px;
+  width: 400px;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.zzzzz {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 750px;
+  background-image: url("img/잠금화면1.gif");
+  background-size: cover;
+  border: 7px solid #000000;
+  border-radius: 40px;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.zzzzz.hide {
+  opacity: 0;
+  pointer-events: none; /* 사라진 후 클릭 차단 */
+}
+
+.haedbar {
+  background-color: rgb(0, 0, 0);
+  border-radius: 40px 40px 0 0;
+  padding: 5px 30px;
+  width: 420px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 998;
+}
+
+p {
+  color: #fff3f3;
+  font-size: 17px;
+}
+
+#apple {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+#battery {
+  width: 90px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.mainhome {
+  background-image: url(img/아이폰배경화면.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.app-icon {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.app-icon:hover {
+  transform: scale(1.2);
+}
+
+.appstore {
+  background-image: url("img/앱스토어.png");
+  background-size: cover;
+}
+
+.safari {
+  background-image: url("img/사파리.png");
+  background-size: cover;
+}
+
+.photos {
+  background-image: url("img/사진.png");
+  background-size: cover;
+}
+
+.calculator {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  background-image: url("img/계산기아이콘.png");
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.dock {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  width: 370px;
+  height: 80px;
+  border-radius: 23px;
+  transform: translate(10px, 500px);
+  display: grid;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.aaa {
+  background-image: url("img/설정.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+.bbb {
+  background-image: url("img/크롬.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+.ccc {
+  background-image: url("img/문자.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+.ddd {
+  background-image: url("img/카톡.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+.eee {
+  background-image: url("img/인스타.png");
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+}
+
+.container {
+  position: absolute;
+  background: #171616;
+  width: 387px;
+  height: 740px;
+  z-index: 997;
+  transform: translate(0px, -142px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  transform-origin: 60% 39%;
+  transition: transform 1s ease, opacity 0.7s ease;
+  transform: translate(-50%, -50%) scale(0);
+  opacity:0;
+}
+
+.container.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.display{
+  background: #171616;
+  width: 100%;
+  height: 300px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.history {
+  color: #767575;
+  font-size: 30px;
+  font-weight: 400;
+  text-align: right;
+  margin-top: 100px;
+  margin-right: 30px;
+}
+
+.current {
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 300;
+  text-align: right;
+  margin-right: 16px;
+}
+
+.current::after {
+  content: "";
+  display: inline-block;
+  width: 3px;
+  height: 0.8em;
+  margin-right: 10px;
+  background-color: rgb(255, 255, 255);
+  animation: blink 0.9s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.buttons {
+  width:100%; 
+  height:100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 15px;
+}
+
+.button {
+  background-color: #3b3838;
+  color: #ffffff;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(78, 78, 79);
+}
+
+.button:active {
+  transform: translateY(4px);
+}
+
+.function {
+  background-color: rgb(92,91,96);
+}
+
+.button:hover {
+  background-color: rgb(131, 131, 133);
+}
+
+.operator, .equal {
+  background-color: rgb(248, 157, 39);
+}
+
+.operator:hover,
+.equal:hover {
+  background-color: rgb(255, 184, 92);
+}
+
+.number .eraser {
+  background-color: rgb(42,42,44);
+}
